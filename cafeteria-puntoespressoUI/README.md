@@ -45,7 +45,7 @@ cafeteria-puntoespressoUI/
 │   │   ├── SpriteAnimation/    # Animación de cafetera por pasos (Sprite CSS)
 │   │   └── VideoSection/       # Reproductor de video interactivo con filtros CSS y velocidad
 │   ├── App.tsx                 # Componente raíz y contenedor principal de la aplicación
-│   ├── App.module.css          # Estilos CSS específicos de la estructura global y modal de evaluación
+│   ├── App.module.css          # Estilos CSS específicos de la estructura global
 │   ├── index.css               # Estilos globales, variables de diseño y scrollbar personalizado
 │   └── main.tsx                # Punto de entrada de renderizado de React
 ├── package.json                # Configuración de dependencias y scripts de NPM
@@ -127,9 +127,6 @@ El diseño visual está inspirado en cafeterías nórdicas y de especialidad, pr
 *   **Especificación:** Pequeña sección de gamificación interactiva.
 *   **Lógica del Minijuego:** El logotipo oficial de la cafetería rebota diagonalmente por un área delimitada (*sandbox*) por medio de animaciones complejas de rebote en CSS (`@keyframes bounceX` y `@keyframes bounceY` operando de forma desfasada). El usuario debe interactuar haciendo clic sobre el logotipo en movimiento. Al atraparlo, se congela la animación (`animation-play-state: paused`), se activa un sonido visual de éxito y se revela un código promocional de descuento exclusivo (`ESPRESSO15`). El usuario puede reiniciar el juego para volver a jugar.
 
-### 9. Panel del Evaluador / Docente
-
-*   **Especificación:** Para cumplir con el propósito evaluativo del examen, se incluye un botón flotante discreto (`i`) en la esquina inferior derecha. Al hacer clic, despliega un cuadro modal académico que contiene la información de la materia ("Programación Multimedia"), el examen y el profesor evaluador, y provee un campo de texto editable para registrar el nombre y la matrícula del alumno de forma persistente mientras dure la sesión.
 
 ---
 

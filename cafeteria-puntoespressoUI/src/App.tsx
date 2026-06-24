@@ -11,8 +11,6 @@ import heroBg from './assets/granoycafe.jpg';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [showMetadata, setShowMetadata] = useState(false);
-  const [studentName, setStudentName] = useState('Tu Nombre y Matrícula');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -114,53 +112,7 @@ function App() {
         </div>
       </footer>
 
-      {/* BOTÓN FLOTANTE DISCRETO PARA EVALUACIÓN DOCENTE */}
-      <button 
-        onClick={() => setShowMetadata(!showMetadata)}
-        className={styles.academicToggle}
-        aria-label="Información del Examen"
-        title="Panel del Evaluador"
-      >
-        i
-      </button>
 
-      {/* PANEL MODAL DE EXAMEN (Sólo visible al dar clic en el botón de información) */}
-      {showMetadata && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modalCard}>
-            <div className={styles.modalHeader}>
-              <h3 className={styles.modalTitle}>Panel del Docente - Evaluación</h3>
-              <button onClick={() => setShowMetadata(false)} className={styles.modalClose}>✕</button>
-            </div>
-            <div className={styles.modalBody}>
-              <p style={{ margin: '4px 0' }}><strong>Materia:</strong> Programación Multimedia</p>
-              <p style={{ margin: '4px 0' }}><strong>Examen:</strong> Extraordinario 2026-2</p>
-              <p style={{ margin: '4px 0' }}><strong>Catedrático:</strong> Ing. Erick Solórzano</p>
-              <hr style={{ borderColor: 'rgba(140, 90, 60, 0.2)', margin: '12px 0' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', textAlign: 'left' }}>
-                <label style={{ fontSize: '0.85rem', fontWeight: 'bold' }}>Nombre del Alumno:</label>
-                <input 
-                  type="text" 
-                  value={studentName}
-                  onChange={(e) => setStudentName(e.target.value)}
-                  style={{
-                    backgroundColor: '#FFF8F0',
-                    color: '#4B2E2B',
-                    border: '1px solid #8C5A3C',
-                    padding: '8px',
-                    borderRadius: '4px',
-                    fontSize: '0.9rem',
-                    outline: 'none'
-                  }}
-                />
-              </div>
-              <div style={{ marginTop: '14px', fontSize: '0.8rem', color: '#8C5A3C', fontStyle: 'italic', lineHeight: '1.4' }}>
-                * Este panel permite ingresar tus datos académicos de sustentante para que el docente los valide en el código fuente y visualmente sin alterar la estética real de la cafetería.
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
