@@ -1,0 +1,141 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; 
+  border: 1px solid rgba(140, 90, 60, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(75, 46, 43, 0.03);
+  color: #4B2E2B;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 8px 0;
+  color: #4B2E2B;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #8C5A3C;
+  margin: 0 0 16px 0;
+  max-width: 600px;
+  align-self: center;
+}
+
+/* Área delimitada para el rebote */
+.sandbox {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #FFF8F0;
+  background-image: radial-gradient(rgba(192, 133, 82, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: 1px solid rgba(140, 90, 60, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Elemento contenedor del logo que rebota */
+.logoWrapper {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.1s ease;
+  
+  /* Animación de rebote infinito desfasada en X e Y */
+  animation: bounceX 6.1s linear infinite alternate, 
+             bounceY 4.3s linear infinite alternate;
+}
+
+.logoWrapper:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(192, 133, 82, 0.4);
+}
+
+.logoWrapper:active {
+  transform: scale(0.95);
+}
+
+/* Estado pausado si se desea */
+.paused {
+  animation-play-state: paused;
+}
+
+/* Tarjeta del Premio obtenido */
+.promoReward {
+  background-color: #4B2E2B;
+  color: #FFF8F0;
+  border: 2px dashed #C08552;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: slideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.promoCode {
+  font-family: monospace;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: #C08552;
+  font-weight: bold;
+  background-color: rgba(255, 248, 240, 0.1);
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(192, 133, 82, 0.3);
+}
+
+.resetBtn {
+  background-color: #C08552;
+  color: #4B2E2B;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s;
+}
+
+.resetBtn:hover {
+  background-color: #FFF8F0;
+}
+
+/* Keyframes para el movimiento horizontal continuo */
+@keyframes bounceX {
+  0% {
+    left: 0%;
+    transform: translateX(0);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-70px);
+  }
+}
+
+/* Keyframes para el movimiento vertical continuo */
+@keyframes bounceY {
+  0% {
+    top: 0%;
+    transform: translateY(0);
+  }
+  100% {
+    top: 100%;
+    transform: translateY(-70px);
+  }
+}

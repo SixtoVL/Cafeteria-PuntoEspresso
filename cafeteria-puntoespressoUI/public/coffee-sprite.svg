@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100" width="800" height="100">
+  <!-- Frame 1 (0px - 100px) -->
+  <g transform="translate(0, 0)">
+    <!-- Plato -->
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <!-- Taza -->
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <!-- Brillo de la taza -->
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 1) -->
+    <path d="M 45 38 Q 42 26, 48 18 T 44 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 58 28, 52 20 T 56 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 2 (100px - 200px) -->
+  <g transform="translate(100, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 2) -->
+    <path d="M 45 38 Q 44 28, 43 18 T 46 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 55 26, 56 18 T 53 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 3 (200px - 300px) -->
+  <g transform="translate(200, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 3) -->
+    <path d="M 45 38 Q 46 30, 40 20 T 48 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 52 28, 58 18 T 50 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 4 (300px - 400px) -->
+  <g transform="translate(300, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 4) -->
+    <path d="M 45 38 Q 44 26, 42 16 T 45 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 54 28, 52 18 T 55 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 5 (400px - 500px) -->
+  <g transform="translate(400, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 5) -->
+    <path d="M 45 38 Q 42 26, 48 18 T 44 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 58 28, 52 20 T 56 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 6 (500px - 600px) -->
+  <g transform="translate(500, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 6) -->
+    <path d="M 45 38 Q 45 28, 44 18 T 46 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 56 26, 54 18 T 52 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 7 (600px - 700px) -->
+  <g transform="translate(600, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 7) -->
+    <path d="M 45 38 Q 48 30, 42 20 T 48 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 54 28, 56 18 T 50 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  <!-- Frame 8 (700px - 800px) -->
+  <g transform="translate(700, 0)">
+    <ellipse cx="50" cy="82" rx="30" ry="6" fill="#8C5A3C" opacity="0.8" />
+    <path d="M 25 45 C 25 75, 75 75, 75 45 Z" fill="#4B2E2B" stroke="#C08552" stroke-width="2" />
+    <path d="M 70 50 C 82 50, 82 65, 70 65" fill="none" stroke="#C08552" stroke-width="3" stroke-linecap="round" />
+    <path d="M 30 50 C 30 65, 45 70, 50 70" fill="none" stroke="#FFF8F0" stroke-width="1.5" opacity="0.3" stroke-linecap="round" />
+    <!-- Vapor (Frame 8) -->
+    <path d="M 45 38 Q 42 26, 46 16 T 44 6" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    <path d="M 55 38 Q 56 28, 53 18 T 55 8" fill="none" stroke="#FFF8F0" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+  </g>
+</svg>

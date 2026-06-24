@@ -1,0 +1,25 @@
+# Archivos del sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Carpetas de dependencias y compilación de proyectos
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+**/*.tsbuildinfo
+
+# Logs y cachés
+**/logs/
+**/*.log
+**/.eslintcache
+**/.cache/
+
+# Entornos y secretos (.env)
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local

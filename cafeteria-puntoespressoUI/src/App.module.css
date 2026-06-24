@@ -1,0 +1,301 @@
+.appContainer {
+  min-height: 100vh;
+  background-color: #FFF8F0;
+  color: #4B2E2B;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header estilizado con Glassmorphism */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(75, 46, 43, 0.96); /* Café chocolate semi-transparente */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 2px solid #C08552;
+  padding: 12px 24px;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #FFF8F0;
+  line-height: 1.1;
+}
+
+.brandTagline {
+  font-size: 0.8rem;
+  color: #C08552;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  color: #FFF8F0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.navLink:hover {
+  color: #C08552;
+}
+
+/* Contenido Principal */
+.main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Sección de Banner de Bienvenida */
+.heroBanner {
+  background-image: linear-gradient(135deg, #4B2E2B 0%, #301D1B 100%);
+  color: #FFF8F0;
+  padding: 60px 40px;
+  border-radius: 20px;
+  border: 1px solid #8C5A3C;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(75, 46, 43, 0.15);
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 0 0 16px;
+  color: #FFF8F0;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #C08552;
+  line-height: 1.6;
+}
+
+/* Layout comercial: Menú y Panel lateral */
+.menuLayout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+@media (max-width: 950px) {
+  .menuLayout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.sidebar {
+  flex-basis: 350px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 950px) {
+  .sidebar {
+    flex-basis: auto;
+  }
+}
+
+.sidebarSection {
+  background-color: #ffffff;
+  border: 1px solid rgba(140, 90, 60, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(75, 46, 43, 0.03);
+}
+
+.sidebarTitle {
+  font-size: 1.2rem;
+  color: #4B2E2B;
+  border-bottom: 2px solid #C08552;
+  padding-bottom: 8px;
+  margin: 0 0 16px;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.videoSectionWrapper {
+  width: 100%;
+}
+
+/* Pie de página */
+.footer {
+  background-color: #4B2E2B;
+  color: #FFF8F0;
+  border-top: 2px solid #C08552;
+  padding: 30px 24px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.footerText {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* BOTÓN FLOTANTE ACADÉMICO PARA EL PROFESOR */
+.academicToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4B2E2B;
+  color: #FFF8F0;
+  border: 2px solid #C08552;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.academicToggle:hover {
+  background-color: #FFF8F0;
+  color: #4B2E2B;
+  transform: scale(1.15) rotate(10deg);
+  border-color: #4B2E2B;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(48, 29, 27, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Tarjeta de Modal */
+.modalCard {
+  background-color: #FFF8F0;
+  border: 2px solid #C08552;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(48, 29, 27, 0.3);
+  color: #4B2E2B;
+  animation: modalIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: left;
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(140, 90, 60, 0.15);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #4B2E2B;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #8C5A3C;
+  transition: color 0.1s;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose:hover {
+  color: #4B2E2B;
+}
+
+.modalBody {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

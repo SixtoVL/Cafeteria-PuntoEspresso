@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap');
+
+:root {
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  
+  --bg-cream: #FFF8F0;
+  --accent-caramel: #C08552;
+  --brown-medium: #8C5A3C;
+  --dark-espresso: #4B2E2B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  background-color: var(--bg-cream);
+  color: var(--dark-espresso);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Configuración básica de maquetación */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  margin-top: 0;
+  color: var(--dark-espresso);
+}
+
+p {
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-caramel);
+  border-radius: 5px;
+  border: 2px solid var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brown-medium);
+}
