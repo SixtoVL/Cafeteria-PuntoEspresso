@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './SpriteAnimation.module.css';
+import coffeeSprite from '../../assets/coffee-sprite.svg';
 
 export const SpriteAnimation: React.FC = () => {
   return (
@@ -9,7 +10,11 @@ export const SpriteAnimation: React.FC = () => {
         <span className={styles.statusText}>Abierto / Extrayendo en Vivo</span>
       </div>
 
-      <div className={styles.spriteViewer} aria-label="Cafetera preparando espresso" />
+      <div 
+        className={styles.spriteViewer} 
+        style={{ backgroundImage: `url(${coffeeSprite})` }}
+        aria-label="Cafetera preparando espresso" 
+      />
 
       <p className={styles.details}>
         Nuestra máquina La Marzocco está calibrada. Visítanos por tu espresso perfecto.

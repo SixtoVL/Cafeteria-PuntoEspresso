@@ -46,22 +46,22 @@ function App() {
 
       {/* Contenido Principal */}
       <main className={styles.main}>
-        {/* Hero Banner con fondo nítido y claro */}
+        {/* Banner de Imagen del Hero */}
         <section 
-          className={styles.heroBanner}
+          className={styles.heroImage}
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url(${heroBg})`,
+            backgroundImage: `url(${heroBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
-        >
-          {/* Tarjeta de Vidrio Esmerilado (Glassmorphism) para máxima legibilidad y visualización del fondo */}
-          <div className={styles.heroContentCard}>
-            <h1 className={styles.heroTitle}>Sabor que inspira tus sentidos</h1>
-            <p className={styles.heroSubtitle}>
-              Granos seleccionados a mano, tostados artesanalmente en lotes pequeños y servidos en un ambiente diseñado para desconectarte del mundo.
-            </p>
-          </div>
+        />
+
+        {/* Caja de Texto del Hero debajo de la imagen */}
+        <section className={styles.heroTextSection}>
+          <h1 className={styles.heroTitle}>Sabor que inspira tus sentidos</h1>
+          <p className={styles.heroSubtitle}>
+            Granos seleccionados a mano, tostados artesanalmente en lotes pequeños y servidos en un ambiente diseñado para desconectarte del mundo.
+          </p>
         </section>
 
         {/* Sección de Menú y Estado de Barra en Vivo */}

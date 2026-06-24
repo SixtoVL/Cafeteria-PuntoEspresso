@@ -1,6 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './VideoSection.module.css';
 import cafeVideo from '../../assets/Video.mp4';
+import logoImg from '../../assets/logo.webp';
+import posterBg from '../../assets/granoycafe.jpg';
+
 
 type FilterType = 'Normal' | 'Sepia' | 'Grayscale' | 'Vintage';
 
@@ -10,6 +13,16 @@ export const VideoSection: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true); // Muted por defecto para autoplay sin bloqueo
   const [playbackRate, setPlaybackRate] = useState(1);
   const [activeFilter, setActiveFilter] = useState<FilterType>('Normal');
+  const [hasStarted, setHasStarted] = useState(false);
+  const [volume, setVolume] = useState(0.5);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = volume;
+      videoRef.current.muted = isMuted;
+    }
+  }, [volume, isMuted]);
+
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -17,15 +30,37 @@ export const VideoSection: React.FC = () => {
         videoRef.current.pause();
       } else {
         videoRef.current.play().catch(err => console.log("Error al reproducir video:", err));
+        setHasStarted(true);
       }
       setIsPlaying(!isPlaying);
     }
   };
 
   const toggleMute = () => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    if (!nextMuted && volume === 0) {
+      setVolume(0.5);
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    if (newVolume > 0) {
+      setIsMuted(false);
+    } else {
+      setIsMuted(true);
+    }
+  };
+
+  const restartVideo = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      videoRef.current.currentTime = 0;
+      if (!isPlaying) {
+        videoRef.current.play().catch(err => console.log("Error al reproducir video:", err));
+        setIsPlaying(true);
+      }
     }
   };
 
@@ -68,15 +103,39 @@ export const VideoSection: React.FC = () => {
           loop
           muted={isMuted}
           playsInline
-          onPlay={() => setIsPlaying(true)}
+          onPlay={() => {
+            setIsPlaying(true);
+            setHasStarted(true);
+          }}
           onPause={() => setIsPlaying(false)}
         />
+
+        {/* Portada Premium Personalizada (Overlay) */}
+        {!hasStarted && (
+          <div 
+            className={styles.posterOverlay} 
+            style={{ backgroundImage: `url(${posterBg})` }}
+            onClick={togglePlay}
+          >
+            <div className={styles.posterDarkener} />
+            <div className={styles.posterContent}>
+              <img src={logoImg} alt="Cafetería Punto Espresso Logo" className={styles.posterLogo} />
+              <button className={styles.posterPlayBtn} aria-label="Reproducir video">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+              <span className={styles.posterText}>Haz clic para ver la preparación</span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Panel de control personalizado */}
       <div className={styles.controlsPanel}>
         {/* Controles de reproducción */}
         <div className={styles.playGroup}>
+          {/* Botón Reproducir */}
           <button
             onClick={togglePlay}
             className={styles.controlBtn}
@@ -109,36 +168,67 @@ export const VideoSection: React.FC = () => {
             )}
           </button>
 
+          {/* Botón Reiniciar */}
           <button
-            onClick={toggleMute}
-            className={`${styles.controlBtn} ${styles.muteBtn}`}
+            onClick={restartVideo}
+            className={styles.controlBtn}
+            aria-label="Reiniciar"
           >
-            {isMuted ? (
-              <>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-                </svg>
-                Activar Sonido
-              </>
-            ) : (
-              <>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
-                </svg>
-                Silenciar
-              </>
-            )}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+            </svg>
+            Reiniciar
           </button>
+
+          {/* Control de Sonido y Volumen */}
+          <div className={styles.volumeContainer}>
+            <button
+              onClick={toggleMute}
+              className={`${styles.controlBtn} ${styles.muteBtn}`}
+              aria-label={isMuted ? "Activar Sonido" : "Silenciar"}
+            >
+              {isMuted || volume === 0 ? (
+                <>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                  </svg>
+                  Activar
+                </>
+              ) : (
+                <>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                  </svg>
+                  Silenciar
+                </>
+              )}
+            </button>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={isMuted ? 0 : volume}
+              onChange={handleVolumeChange}
+              className={styles.volumeSlider}
+              aria-label="Control de volumen"
+            />
+          </div>
         </div>
 
         {/* Control de filtros multimedia */}

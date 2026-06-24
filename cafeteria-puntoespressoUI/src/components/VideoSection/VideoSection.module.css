@@ -156,3 +156,155 @@
   color: #4B2E2B;
   border-color: #C08552;
 }
+
+/* Portada Premium Personalizada (Overlay) */
+.posterOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.posterDarkener {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 24, 16, 0.65); /* Tono café cálido con transparencia */
+  backdrop-filter: blur(4px); /* Efecto glassmorphism moderno */
+  transition: background-color 0.3s ease;
+}
+
+.posterOverlay:hover .posterDarkener {
+  background-color: rgba(43, 24, 16, 0.55);
+}
+
+.posterContent {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.posterLogo {
+  width: 140px;
+  max-width: 80%;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+.posterPlayBtn {
+  background-color: #C08552;
+  color: #FFF8F0;
+  border: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(192, 133, 82, 0.5);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.posterPlayBtn svg {
+  margin-left: 4px; /* Ajuste visual para el icono de play */
+}
+
+.posterOverlay:hover .posterPlayBtn {
+  transform: scale(1.12);
+  background-color: #FFF8F0;
+  color: #4B2E2B;
+  box-shadow: 0 12px 30px rgba(255, 248, 240, 0.6);
+}
+
+.posterText {
+  color: #FFF8F0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animación sutil de levitación para el logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Control de Volumen y Contenedor */
+.volumeContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volumeSlider {
+  width: 70px;
+  height: 6px;
+  -webkit-appearance: none;
+  background: rgba(255, 248, 240, 0.25);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.volumeSlider:hover {
+  background: rgba(255, 248, 240, 0.4);
+  width: 90px; /* Se expande ligeramente para mejor accesibilidad visual */
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #C08552;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.volumeSlider::-webkit-slider-thumb:hover {
+  background: #FFF8F0;
+  transform: scale(1.25);
+}
+
+.volumeSlider::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #C08552;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.volumeSlider::-moz-range-thumb:hover {
+  background: #FFF8F0;
+  transform: scale(1.25);
+}
+
+
